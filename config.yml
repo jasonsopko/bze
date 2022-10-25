@@ -1,11 +1,11 @@
 accounts:
   - name: alice
-    coins: ["1000000000000utestbze"]
+    coins: ["1000000000000utbz"]
   - name: bob
-    coins: ["1000000000000utestbze"]
+    coins: ["1000000000000utbz"]
 validator:
   name: alice
-  staked: "10000000000utestbze"
+  staked: "10000000000utbz"
 client:
   openapi:
     path: "docs/static/openapi.yml"
@@ -13,11 +13,11 @@ client:
     path: "vue/src/store"
 faucet:
   name: bob
-  coins: ["100000000000utestbze"]
+  coins: ["100000000000utbz"]
 build:
   binary: "bzed"
 genesis:
   app_state:
     staking:
       params:
-        bond_denom: "utestbze"
+        bond_denom: "utbz"

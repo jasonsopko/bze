@@ -1,0 +1,67 @@
+version: '2'
+
+services:
+    val_1:
+      build:
+        context: ../
+        dockerfile: docker/Dockerfile
+      ports:
+        - "26656:26656"
+        - "26657:26657"
+        - "1317:1317"
+        - "9090:9090"
+      expose:
+        - 26656
+        - 26657
+        - 1317
+        - 9090
+      volumes:
+        - ./.testnets/val_1:/root/.bze
+      networks:
+        localnet:
+          ipv4_address: 192.168.10.2
+    val_2:
+      build:
+        context: ../
+        dockerfile: docker/Dockerfile
+      ports:
+        - "26658:26656"
+        - "26659:26657"
+        - "1318:1317"
+        - "9091:9090"
+      expose:
+        - 26656
+        - 26657
+        - 1317
+        - 9090
+      volumes:
+        - ./.testnets/val_2:/root/.bze
+      networks:
+        localnet:
+          ipv4_address: 192.168.10.3
+    val_3:
+      build:
+        context: ../
+        dockerfile: docker/Dockerfile
+      ports:
+        - "26660:26656"
+        - "26661:26657"
+        - "1319:1317"
+        - "9092:9090"
+      expose:
+        - 26656
+        - 26657
+        - 1317
+        - 9090
+      volumes:
+        - ./.testnets/val_3:/root/.bze
+      networks:
+        localnet:
+          ipv4_address: 192.168.10.4
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/25
